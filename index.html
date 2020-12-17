@@ -1,20 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <title>Document</title>
-</head>
-<body>
-    
-    <audio src="1.mp3" id="myAudio" controls autoplay>first audio</audio>
-    
+    <style>
+	  #content {
+	    width: 100%;
+		height: auto;
+		margin: 50% auto;
+		text-align: center;
+	  
+	  }
+	  #clickOpen {
+        display: inline-block;
+        padding: 5px 0px;
+        background-color: #e3e3e3;
+      }
 
+      .list {
+        list-style: none;
+        padding-left: 0px;
+        background-color: #e3e3e3;
+        display: none;
+      }
+	  
+	  .ite,
+	  .it{
+	    padding: 10px;
+	  
+	  }
+	  #img1,#img2{
+		height: 100px;
+	  
+	  }
+	</style>
+  </head>
 
+  <body>
+      <div id="content">
+      <div id="clickOpen">
+	    小宝贝你都进来了不想点一下吗
+      </div>
+      <br />
 
+      <ul class="list">
+	    <li class="item">
+		  不要生气了嘛，都是我的错,我也不知道为什么会生气,如果你对我说那些话的话我估计我也会很生气很难过的不会淡定的,所以昨晚我无缘无故
+		  生气是我不好,你昨晚肯定很难过,估计你发完那段话后也在等我的回复吧,但你昨晚那么晚才睡觉真的很不好,能不能不要不理我,不要闭关好不好,
+		  
+		</li>
+		<li class="ite"><div id="item1"><div id="item3">好</div><img id="img1"></div></li>
+		<li class="it"><div id="item2"><div id="item4">不好</div><img id="img2"></div></li>
+      </ul>
+      </div>
+    <script>
+	  var clickBtn = document.getElementById('clickOpen');
+      var list = document.getElementsByClassName('list')[0];
+	  var item1 = document.getElementById('item1');
+	  var item2 = document.getElementById('item2');
+	  var item3 = document.getElementById('item3');
+	  var item4 = document.getElementById('item4');
 
+      var isOpen = false;
 
+      clickBtn.addEventListener('click', function () {
 
-    <script type="text/javascript" src="js/main.js"></script>
-</body>
+        if (isOpen == false) {
+          clickBtn.innerHTML = ' ';
+          list.style.display = 'inline-block';
+		  //ite.style.display = 'inline-block';
+		  //it.style.display = 'inline-block';
+          isOpen = !isOpen;
+        } else {
+          clickBtn.innerHTML = ' ';
+          list.style.display = 'none';
+          isOpen = !isOpen;
+        }
+
+      });
+	  
+	  item1.addEventListener('click', function () {
+	    item3.innerHTML = ' ';
+		item4.innerHTML = '不好';
+        document.getElementById("img1").src="1.jpg";
+		document.getElementById("img2").src="";
+		
+		
+	  
+	  });
+	  item2.addEventListener('click', function () {
+	    item3.innerHTML = '好';
+		item4.innerHTML = ' ';
+	    alert("原谅我吧小可爱");
+		document.getElementById("img2").src="2.jpg";
+		document.getElementById("img1").src="";
+	  
+	  });
+	  
+	  
+	  
+	  
+	
+	  
+	  
+	</script>
+
+  </body>
+
 </html>
